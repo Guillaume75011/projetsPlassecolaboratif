@@ -16,7 +16,7 @@ class SessionDAO {
         return $result;
     }
     public static function getAll() {
-        $result=array(
+       /* $result=array(
             array(
                 "id_session_formation" => 1,
                 "nom" => "CDA 1"),
@@ -27,6 +27,14 @@ class SessionDAO {
                 "id_session_formation" => 3,
                 "nom" => "CDA 3")
         );
-        return $result;
+        return $result;*/
+        require_once 'DB.php';
+        $db=DB::getConnection();
+        // Préparer une requête SQL
+        $sql="SELECT * FROM session_formation ";
+        $stmt = $db->prepare($sql);
+      $stmt->execute();
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+   
     }
 }
