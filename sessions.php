@@ -7,9 +7,10 @@ $sessions = SessionDAO::getAll();
 require_once "vue/sessionsV.php";
 }
 catch(PDOException $exc){
-    require_once "Vue/messageV.php";
     $message="Problème technique. Veuillez essayer ultérieurement";
    // $exc=null;
+    require_once "Vue/messageV.php";
+    
 }
 ?>
     
