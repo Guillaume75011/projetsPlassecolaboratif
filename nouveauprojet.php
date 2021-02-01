@@ -27,10 +27,17 @@ else{
         require_once "vue/nouveauProjetV.php";
         }
         else{
+            if ($idsession==null || $idsession=== false){
+                $erreur="idSession doit être présent et entier";
+            }
+        else{
+        require_once "vue/nouveauProjetV.php";
         require_once "modele/ProjetDaoInsert.php";
         ProjetDaoInsert::insert($idsession,$titre,$dateLimite,$sujet,$dateDebut);
         // rediriger vers index.php
         header("Location: index.php");
+        }
+      
     }
     
   }
