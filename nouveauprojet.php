@@ -28,7 +28,8 @@ else{
         }
         else{
             if ($idsession==null || $idsession=== false){
-                $erreur="idSession doit être présent et entier";
+                $erreurs["idsession"]="idsession doit être présent et entier";
+                require_once "vue/nouveauProjetV.php";
             }
         else{
         require_once "vue/nouveauProjetV.php";
