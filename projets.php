@@ -5,7 +5,7 @@
    $erreur= null;
    $session=null;
     if($idSession==null || $idSession==false)   {
-        $erreur="idSession doit être préent et entier";
+        $erreur="idSession doit être présent et entier";
     } 
     else {
         require_once "modele/SessionDAO.php";
