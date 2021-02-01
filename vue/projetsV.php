@@ -9,15 +9,14 @@
         <h1> Guillaume Vechambre </h1>
 
         <?php
-        if ($erreur==null) {
-            
-        ?>
-        <p> Session vaut <?= $session["nom"] ?> </p>
-        <?php
+        if ($erreur == null) {
+            ?>
+            <p> Session vaut <?= $session["nom"] ?> </p>
+            <?php
         } else {
             ?>
-        <div class="erreur"> <?=$erreur ?></div>
-        <?php
+            <div class="erreur"> <?= $erreur ?></div>
+            <?php
         }
         ?>
 

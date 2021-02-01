@@ -1,0 +1,17 @@
+@startuml
+participant Navigateur
+participant Vue
+
+Navigateur -> Controleur: GET projet.php?idProjet=123
+Controleur -> Controleur: parametres ok ?;
+Controleur -> Modele: ProjetDao::getProjet($id_projet);
+Modele-> SGBD: SELECT *\nFROM projet\nWHERE id_projet =($id_projet);
+SGBD-> Modele: 0 ou 1 ligne;
+Modele-> Controleur: array projet ou Exeption
+Controleur -> Modele: ProjetDao::getEquipes($id_projet);
+Modele-> SGBD: SELECT *\nFROM equipe\nWHERE id_projet =($id_projet)
+SGBD -> Modele: lignes
+Modele -> Controleur: tableau de tableaux associatifs
+Controleur-> Vue: projetV.php
+Vue -> Navigateur: détail du projet\net de ses équioes
+@enduml
