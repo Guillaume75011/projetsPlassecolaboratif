@@ -7,8 +7,8 @@
     </head>
     <body>
         <h1>Projet <?= $projet["titre"] ?> (n° <?= $projet["id_projet"] ?>)</h1>
-        <p>Début : <?= $projet["date-debut"] ?></p>
-        <p> Fin : <?= $projet["date-limite"] ?></p>
+        <p>Début : <?= $projet["date_debut"] ?></p>
+        <p> Fin : <?= $projet["date_limite"] ?></p>
 
         <h2>Equipes</h2>
         <ul>
