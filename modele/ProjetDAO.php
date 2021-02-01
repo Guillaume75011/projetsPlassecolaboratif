@@ -1,26 +1,37 @@
 <?php
 
-class projetDAO{
-    
-    public static function getAll() {
-        $list = null;
+class ProjetDAO {
 
-        $listProjet = [
-            "projet" =>array(1,projetCollaboratif,"15/01/2021","30/01/2021",1),
-            "id_equipe" => 1,
-            
-            "membre" =>array(
-                "id_membre" => 1,
-                "nom" => "Issouf",
-                "Prenom" => "Sacko"),
-           
-        ];
+    public static function getProjet($idProjet) {
+        $result = null;
 
-        return $listProjet;
-
-        // return $result[0][1];
+        $result = array(
+            "id_projet" => $idProjet,
+            "titre" => "projetCollaboratif",
+            "date-debut" => "15/01/2021",
+            "date-limite" => "30/01/2021");
+        return $result;
     }
+
+    public static function getEquipes($idProjet) {
+        $result = null;
+
+        $result = array(
+            array(
+                "id_equipe" => 1,
+                "date_creation" => "2021-02-01",
+                "membres" => array(
+                    array(
+                        "id_membre" => 1,
+                        "nom" => "Issouf",
+                        "prenom" => "Sacko"
+                    )
+                )
+            )
+        );
+        return $result;
+    }
+
 }
-    
- ?>
+?>
 
